@@ -45,3 +45,19 @@ Notes
  - This has only been tested on Windows 10 and 11 Enterprise
  - The addon may be compatible with other versions of Blender, but this has not been tested.
  - The addon requires an active internet connection to use the GPT-3 API.
+
+
+
+CHANGELOG:
+4/1/2023: v0.9.1
+ - Removed 'Generated Response' text bar of v0.9 (not operational)
+ - Removed 'Run Generated Response' of v0.9 (not operational)
+ - Model Selection added to Preferences
+    - Davinci-003
+    - Davinci-002
+    - Davinci-001
+    - Curie-001
+ 
+
+3/31/2023: v0.9
+ - RELEASE!!!!
