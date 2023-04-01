@@ -11,15 +11,17 @@ To install the addon, follow these steps:
 
 Setting up the API key
 Before using the addon, you need to set up your API key for OpenAI's GPT-3 API. To do this, follow these steps:
+
 1. Open Blender and go to the "Preferences" window.
-2. Click on the "Add-ons" tab and search for "ChatGPT" in the search bar.
-3. Click on the "ChatGPT-3 Integration" addon to open its preferences.
+2. 2. Click on the "Add-ons" tab and search for "ChatGPT" in the search bar.
+3. 3. Click on the "ChatGPT-3 Integration" addon to open its preferences.
 4. Enter your OpenAI API key in the "API Key" field.
 5. Click the "Save Preferences" button to save your changes.
     
     
 Using the addon
 To use the addon, follow these steps:
+
 1. Open Blender and go to the Text Editor.
 2. In the sidebar, click on the "ChatGPT-3" tab to open the addon panel.
 3. Enter your prompt in the "Prompt" field.
