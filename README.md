@@ -25,7 +25,7 @@ To use the addon, follow these steps:
 1. Open Blender and go to the Text Editor.
 2. In the sidebar, click on the "ChatGPT-3" tab to open the addon panel.
 3. Enter your prompt in the "Prompt" field.
-4. Click the "Generate Response" button to generate a response to your prompt.
+4. Click the "Generate Response" button to generate a response to your prompt. (You may have to click twice)
 5. The generated response will be displayed in the "Generated Response" field as a multi-line text box.
 6. If desired, you can save the generated response as a new script by clicking the "Run Generated Script" button and choosing a file name and location.
     
