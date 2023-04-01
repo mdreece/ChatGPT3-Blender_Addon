@@ -51,7 +51,7 @@ cls
 echo :: INSTALLATION OF CHAT_GPT3_ADDON COMPLETE ::
 echo		- OPENAI PYTHON LIBRARY 
 echo		- CURL 
-echo		- CHAT_GPT3_ADDON (V0.9.1)
+echo		- CHAT_GPT3_ADDON (V0.9.2)
 echo.
 echo :: BLENDER WILL OPEN WHEN HITTING ENTER ::
 echo ::  - ENABLE ADDON                      ::
