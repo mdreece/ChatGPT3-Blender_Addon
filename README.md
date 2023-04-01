@@ -15,9 +15,9 @@ The ChatGPT-3 Integration Addon allows Blender users to generate text responses 
 Installation
 To install the addon, follow these steps:
 
-1. Download or create a BATCH file using this linked script. https://raw.githubusercontent.com/mdreece/ChatPGT3-Blender_Addon/main/chat_gpt3_addon_INSTALL.bat (an extraction error may appear, but all should still operate as expected)
+1. Download or create a BATCH file using this linked script. https://raw.githubusercontent.com/mdreece/ChatPGT3-Blender_Addon/main/chat_gpt3_addon_INSTALL.bat
 2. Save the BATCH (.bat) anywhere and run as ADMIN
-3. The .BAT will install OPENAI Python Libraries, CURL and add the add-on to your BLENDER system. 
+3. The .BAT will install OPENAI Python Libraries, CURL and add the add-on to your BLENDER system (an extraction error may appear, but all should still operate as expected).
 4. BLENDER will open and the add-on should be enabled. (If not search for ‘Chat’)
 
 
