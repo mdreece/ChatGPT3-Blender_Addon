@@ -1,6 +1,6 @@
 # ChatPGT3-Blender_Addon (Hella ALPHA)
 CURRENT VERSION: 0.9
-"Dave Nectariad Rome" is just my full name all mixed up
+"Dave Nectariad Rome" is just my full name all mixed up.
 
 
 The ChatGPT-3 Integration Addon allows Blender users to generate text responses to a prompt using OpenAI's GPT-3 API. The generated response can be displayed in the Text Editor or saved as a new script, or executed directly in Blender (results may vary)
