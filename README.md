@@ -1,5 +1,5 @@
-# ChatGPT3-Blender_Addon (Hella ALPHA)
-CURRENT VERSION: 0.9
+# ChatGPT3-Blender_Addon (ALPHA)
+CURRENT VERSION: 0.9.1
 "Dave Nectariad Rome" is just my full name all mixed up. (Entire Script is made for fun)
 
 !!! YOU WILL NEED YOUR OWN OPENAI API KEY !!!
@@ -8,7 +8,7 @@ https://platform.openai.com/account/api-keys
 !!! FOR MIRCOSOFT WINDOWS OS ONLY !!!
 
 
-The ChatGPT-3 Integration Addon allows Blender users to generate text responses to a prompt using OpenAI's GPT-3 API. The generated response can be displayed in the Text Editor or saved as a new script, or executed directly in Blender (results may vary)
+The ChatGPT-3 Integration Addon allows Blender users to generate text responses to a prompt using OpenAI's GPT-3 API. The generated response can be displayed in the Text Editor. (results may vary)
 Installation
 To install the addon, follow these steps:
 
@@ -25,7 +25,8 @@ Before using the addon, you need to set up your API key for OpenAI's GPT-3 API. 
 2. Click on the "Add-ons" tab and search for "ChatGPT" in the search bar.
 3. Click on the "ChatGPT-3 Integration" addon to open its preferences.
 4. Enter your OpenAI API key in the "API Key" field.
-5. Click the "Save Preferences" button to save your changes.
+5. Select the desired 'Model'
+6. Click the "Save Preferences" button to save your changes.
     
     
 Using the addon
@@ -40,11 +41,11 @@ To use the addon, follow these steps:
     
     
 Notes
- - !!! GENERATED RESPONSE/RUN GENERATED RESPONSE ARE STILL WIP AND WILL NOT WORK CORRECTLY !!!
  - The addon has been tested with Blender version 3.4.1 and 3.4.
  - This has only been tested on Windows 10 and 11 Enterprise
  - The addon may be compatible with other versions of Blender, but this has not been tested.
  - The addon requires an active internet connection to use the GPT-3 API.
+ - OpenAI Python Libraries REQUIRED
 
 
 
