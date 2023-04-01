@@ -1,7 +1,7 @@
 bl_info = {
     "name": "ChatGPT-3 Integration",
     "author": "Dave Nectariad Rome",
-    "version": (0, 9),
+    "version": (0, 9, 1),
     "blender": (3, 40, 1),
     "location": "Text Editor > Sidebar > ChatGPT-3",
     "description": "Integrates ChatGPT-3 into Blender using the OpenAI API",
@@ -57,9 +57,22 @@ class ChatGPTAddonPreferences(bpy.types.AddonPreferences):
         subtype="PASSWORD",
     )
 
+    model: bpy.props.EnumProperty(
+        name="Model",
+        description="Choose the GPT-3 model to use",
+        items=(
+            ("text-davinci-003", "Davinci-003", ""),
+            ("text-davinci-002", "Davinci-002", ""),
+            ("text-davinci-001", "Davinci-001", ""),
+            ("text-curie-001", "Curie-001", ""),
+        ),
+        default="text-davinci-002",
+    )
+
     def draw(self, context):
         layout = self.layout
         layout.prop(self, "api_key")
+        layout.prop(self, "model")
 
 
 class GPT_OT_install_openai(bpy.types.Operator):
@@ -100,39 +113,32 @@ class GPT_OT_save_preferences(bpy.types.Operator):
 class GPT_OT_generate_response(bpy.types.Operator):
     bl_idname = "gpt.generate_response"
     bl_label = "Generate Response"
-    bl_options = {'REGISTER'}
 
     def execute(self, context):
-        api_key = get_openai_api_key()
-        if not api_key:
-            self.report({'ERROR'}, "Please set your ChatGPT API key in the addon preferences.")
-            return {'CANCELLED'}
-
-        openai.api_key = api_key
+        addon_prefs = context.preferences.addons[__name__].preferences
+        openai.api_key = addon_prefs.api_key
 
         prompt = context.scene.chat_gpt_prompt
+
         try:
-            response = generate_chat_gpt_response(prompt)
+            response = openai.Completion.create(
+                engine=addon_prefs.model,
+                prompt=prompt,
+                max_tokens=2048,
+                n=1,
+                stop=None,
+                temperature=0.5,
+            )
+            generated_text = response.choices[0].text.strip()
+            context.scene.chat_gpt_response_text = generated_text
+            context.scene.chat_gpt_response.clear()
+            context.scene.chat_gpt_response.write(generated_text)
         except openai.error.RateLimitError:
-            self.report({'ERROR'}, "You exceeded your current quota. Please check your plan and billing details.")
-            return {'CANCELLED'}
-
-        # Create a new Text datablock if not already present
-        response_text = bpy.data.texts.get("ChatGPT_Response")
-        if not response_text:
-            response_text = bpy.data.texts.new("ChatGPT_Response")
-
-        # Set the generated response text as the new property value
-        response_text.from_string(response)
-
-        # Open the generated response in the Text Editor
-        for area in bpy.context.screen.areas:
-            if area.type == "TEXT_EDITOR":
-                area.spaces[0].text = response_text
-                break
+            self.report({'ERROR'}, "ChatGPT-3 API rate limit exceeded. Please check your billing information.")
+        except Exception as e:
+            self.report({'ERROR'}, f"Error generating response: {e}")
 
         return {'FINISHED'}
-
 
 
     @staticmethod
@@ -192,13 +198,6 @@ class GPT_PT_panel(bpy.types.Panel):
         layout.prop(scene, "chat_gpt_prompt")
         layout.operator("gpt.generate_response", icon='TRIA_RIGHT', text="Generate Response")
 
-        # Display the generated response as an interactive multiline text box
-        row = layout.row()
-        row.label(text="Generated Response:")
-        row = layout.row()
-        row.prop(scene, "chat_gpt_response_text", text="")
-
-        layout.operator("gpt.run_script", icon='PLAY', text="Run Generated Script")
 
 
 def get_openai_api_key():
