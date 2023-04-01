@@ -58,6 +58,7 @@ Notes
 
 
 CHANGELOG:
+
 4/1/2023: v0.9.2
  - Added access to Github in Preferences
  - Added access to Documentation in Preferences
