@@ -11,24 +11,24 @@ To install the addon, follow these steps:
 
 Setting up the API key
 Before using the addon, you need to set up your API key for OpenAI's GPT-3 API. To do this, follow these steps:
-    1. Open Blender and go to the "Preferences" window.
-    2. Click on the "Add-ons" tab and search for "ChatGPT" in the search bar.
-    3. Click on the "ChatGPT-3 Integration" addon to open its preferences.
-    4. Enter your OpenAI API key in the "API Key" field.
-    5. Click the "Save Preferences" button to save your changes.
+1. Open Blender and go to the "Preferences" window.
+2. Click on the "Add-ons" tab and search for "ChatGPT" in the search bar.
+3. Click on the "ChatGPT-3 Integration" addon to open its preferences.
+4. Enter your OpenAI API key in the "API Key" field.
+5. Click the "Save Preferences" button to save your changes.
     
     
 Using the addon
 To use the addon, follow these steps:
-    1. Open Blender and go to the Text Editor.
-    2. In the sidebar, click on the "ChatGPT-3" tab to open the addon panel.
-    3. Enter your prompt in the "Prompt" field.
-    4. Click the "Generate Response" button to generate a response to your prompt.
-    5. The generated response will be displayed in the "Generated Response" field as a multi-line text box.
-    6. If desired, you can save the generated response as a new script by clicking the "Run Generated Script" button and choosing a file name and location.
+1. Open Blender and go to the Text Editor.
+2. In the sidebar, click on the "ChatGPT-3" tab to open the addon panel.
+3. Enter your prompt in the "Prompt" field.
+4. Click the "Generate Response" button to generate a response to your prompt.
+5. The generated response will be displayed in the "Generated Response" field as a multi-line text box.
+6. If desired, you can save the generated response as a new script by clicking the "Run Generated Script" button and choosing a file name and location.
     
     
 Notes
-    • The addon has been tested with Blender version 3.40.1.
-    • The addon may be compatible with other versions of Blender, but this has not been tested.
-    • The addon requires an active internet connection to use the GPT-3 API.
+• The addon has been tested with Blender version 3.40.1.
+• The addon may be compatible with other versions of Blender, but this has not been tested.
+• The addon requires an active internet connection to use the GPT-3 API.
