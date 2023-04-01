@@ -130,8 +130,7 @@ class GPT_OT_generate_response(bpy.types.Operator):
         addon_prefs = context.preferences.addons[__name__].preferences
 
         if not addon_prefs.api_key:
-            bpy.ops.preferences.addon_expand(module=__name__)
-            self.report({'ERROR'}, "Please enter your ChatGPT API key in the addon preferences.")
+            self.report({'ERROR'}, "Please enable the ChatGPT-3 Integration addon in the preferences and enter your API key.")
             return {'CANCELLED'}
 
         openai.api_key = addon_prefs.api_key
