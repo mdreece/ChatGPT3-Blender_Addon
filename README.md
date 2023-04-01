@@ -58,6 +58,10 @@ Notes
 
 
 CHANGELOG:
+4/1/2023: v0.9.2
+ - Added access to Github in Preferences
+ - Added access to Documentation in Preferences
+ 
 
 4/1/2023: v0.9.1
  - Removed 'Generated Response' text bar of v0.9 (not operational)
