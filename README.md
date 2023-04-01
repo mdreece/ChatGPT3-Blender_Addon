@@ -22,6 +22,7 @@ To install the addon, follow these steps:
 
 
 Setting up the API key
+
 Before using the addon, you need to set up your API key for OpenAI's GPT-3 API. To do this, follow these steps:
 
 1. Open Blender and go to the "Preferences" window.
@@ -33,6 +34,7 @@ Before using the addon, you need to set up your API key for OpenAI's GPT-3 API. 
     
     
 Using the addon
+
 To use the addon, follow these steps:
 
 1. Open Blender and go to the Text Editor.
