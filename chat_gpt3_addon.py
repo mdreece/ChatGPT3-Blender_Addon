@@ -57,26 +57,10 @@ class ChatGPTAddonPreferences(bpy.types.AddonPreferences):
         subtype="PASSWORD",
     )
 
-    blender_path: bpy.props.StringProperty(
-        name="Blender Path",
-        description="Enter the path to your Blender installation",
-        default="",
-        subtype="FILE_PATH",
-    )
-
-    python_path: bpy.props.StringProperty(
-        name="Python Path",
-        description="Enter the path to the included python.exe file",
-        default="",
-        subtype="FILE_PATH",
-    )
-
     def draw(self, context):
         layout = self.layout
         layout.prop(self, "api_key")
-        layout.prop(self, "blender_path")
-        layout.prop(self, "python_path")
-        layout.operator("gpt.install_openai", text="Install OpenAI Library")
+
 
 class GPT_OT_install_openai(bpy.types.Operator):
     bl_idname = "gpt.install_openai"
@@ -109,40 +93,6 @@ class GPT_OT_save_preferences(bpy.types.Operator):
     def execute(self, context):
         bpy.ops.wm.save_userpref()
         self.report({'INFO'}, "Preferences saved.")
-        return {'FINISHED'}
-
-
-class GPT_OT_install_openai(bpy.types.Operator):
-    bl_idname = "gpt.install_openai"
-    bl_label = "Install openai Library"
-
-    def execute(self, context):
-        preferences = bpy.context.preferences
-        addon_prefs = preferences.addons[__name__].preferences
-        blender_path = addon_prefs.blender_path
-        python_exe = find_blender_python_executable(blender_path)
-
-        if not python_exe:
-            self.report({'ERROR'}, "Cannot find the Blender Python executable. Please set the correct Blender path in the addon preferences.")
-            return {'CANCELLED'}
-
-
-        if not blender_path:
-            self.report({'ERROR'}, "Please set the Blender path in the addon preferences.")
-            return {'CANCELLED'}
-
-        python_exe = find_blender_python_executable(blender_path)
-
-        if not python_exe:
-            self.report({'ERROR'}, "Cannot find the Blender Python executable. Please set the correct Blender path in the addon preferences.")
-            return {'CANCELLED'}
-
-        try:
-            subprocess.check_call([python_exe, "-m", "pip", "install", "openai"])
-            self.report({'INFO'}, "openAI Library Installation Complete")
-        except subprocess.CalledProcessError as e:
-            self.report({'ERROR'}, f"Error installing openai library: {e}")
-
         return {'FINISHED'}
 
 
