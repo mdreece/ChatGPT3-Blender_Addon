@@ -3,7 +3,7 @@
 CURRENT VERSION: 0.9.2
 
 
-"Dave Nectariad Rome" is just my full name all mixed up. (Entire Script is made for fun)
+
 
 !!! YOU WILL NEED YOUR OWN OPENAI API KEY !!!
 https://platform.openai.com/account/api-keys
@@ -80,3 +80,7 @@ CHANGELOG:
 
 3/31/2023: v0.9
  - RELEASE!!!!
+
+
+
+"Dave Nectariad Rome" is just my full name all mixed up. (Entire Script is made for fun)
