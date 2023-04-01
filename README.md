@@ -1,5 +1,8 @@
 # ChatGPT3-Blender_Addon (ALPHA)
-CURRENT VERSION: 0.9.1
+
+CURRENT VERSION: 0.9.2
+
+
 "Dave Nectariad Rome" is just my full name all mixed up. (Entire Script is made for fun)
 
 !!! YOU WILL NEED YOUR OWN OPENAI API KEY !!!
