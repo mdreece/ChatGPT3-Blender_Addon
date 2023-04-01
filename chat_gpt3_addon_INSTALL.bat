@@ -45,20 +45,33 @@ if %errorlevel% neq 0 (
 set url=https://raw.githubusercontent.com/mdreece/ChatPGT3-Blender_Addon/main/chat_gpt3_addon.py
 set output_file=%appdata%\Blender Foundation\Blender\!BLENDER_VERSION!\scripts\addons\chat_gpt3_addon.py
 
+@echo off
 curl -L -o "%output_file%" %url%
 cls
-echo.
 echo :: INSTALLATION OF CHAT_GPT3_ADDON COMPLETE ::
-echo	- OPENAI LIBRARY INSTALLED
-echo	- CURL INSTALLED
-echo	- CHAT_GPT3_ADDON INSTALLED
+echo		- OPENAI PYTHON LIBRARY 
+echo		- CURL 
+echo		- CHAT_GPT3_ADDON (V0.9.1)
 echo.
 echo :: BLENDER WILL OPEN WHEN HITTING ENTER ::
-echo :: CHAT_GBT3_ADDON WILL AUTOMATICALLY BE ENABLED::
+echo ::  - ENABLE ADDON                      ::
+echo ::  - ENTER API KEY                     ::
+echo ::  - SELECT AI MODEL                   ::
 echo.
-echo 
+echo. 
+echo :: README.MD will open ::
 pause >nul
 
+cls
+
 :: Automatically enable the addon
+
 start "" "C:\Program Files\Blender Foundation\Blender !BLENDER_VERSION!\blender.exe" --python-use-system-env --addons chat_gpt3_addon
+
+TIMEOUT /T 3 >NUL
+CLS
+
+start "" "https://raw.githubusercontent.com/mdreece/ChatPGT3-Blender_Addon/main/README.md"
+
+CLOSE
 
