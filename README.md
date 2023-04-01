@@ -45,8 +45,8 @@ To use the addon, follow these steps:
     
     
 Notes
- - The addon has been tested with Blender version 3.4.1 and 3.4.
- - This has only been tested on Windows 10 Enterprise
+ - The addon has been tested with Blender version 3.4, 3.4.1 and 3.5.
+ - This has only been tested on Windows 10 and 11 Professional/Enterprise.
  - The addon may be compatible with other versions of Blender, but this has not been tested.
  - The addon requires an active internet connection to use the GPT-3 API.
  - OpenAI Python Libraries REQUIRED
