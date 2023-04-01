@@ -65,6 +65,7 @@ CHANGELOG:
 4/1/2023: v0.9.2
  - Added access to Github in Preferences
  - Added access to Documentation in Preferences
+ - Prompt to enter API if it is not and a Response is generated
  
 
 4/1/2023: v0.9.1
