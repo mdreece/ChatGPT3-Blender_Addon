@@ -127,13 +127,10 @@ class GPT_OT_generate_response(bpy.types.Operator):
     bl_label = "Generate Response"
 
     def execute(self, context):
-        try:
-            addon_prefs = context.preferences.addons[__name__].preferences
-        except KeyError:
-            self.report({'ERROR'}, "ChatGPT-3 Integration Add-on is not enabled. Please enable it in the Preferences.")
-            return {'CANCELLED'}
+        addon_prefs = context.preferences.addons[__name__].preferences
 
         if not addon_prefs.api_key:
+            bpy.ops.preferences.addon_expand(module=__name__)
             self.report({'ERROR'}, "Please enter your ChatGPT API key in the addon preferences.")
             return {'CANCELLED'}
 
@@ -150,9 +147,14 @@ class GPT_OT_generate_response(bpy.types.Operator):
                 temperature=0.5,
             )
             generated_text = response.choices[0].text.strip()
-            context.scene.chat_gpt_response_text = generated_text
+
+            # Create a new text data-block if context.scene.chat_gpt_response is None
+            if context.scene.chat_gpt_response is None:
+                context.scene.chat_gpt_response = bpy.data.texts.new("ChatGPT-3 Response")
+
             context.scene.chat_gpt_response.clear()
             context.scene.chat_gpt_response.write(generated_text)
+            context.scene.chat_gpt_response_text = generated_text
         except openai.error.RateLimitError:
             self.report({'ERROR'}, "ChatGPT-3 API rate limit exceeded. Please check your billing information.")
         except Exception as e:
