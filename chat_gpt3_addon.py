@@ -127,10 +127,14 @@ class GPT_OT_generate_response(bpy.types.Operator):
     bl_label = "Generate Response"
 
     def execute(self, context):
-        addon_prefs = context.preferences.addons[__name__].preferences
+        try:
+            addon_prefs = context.preferences.addons[__name__].preferences
+        except KeyError:
+            self.report({'ERROR'}, "ChatGPT-3 Integration Add-on is not enabled. Please enable it in the Preferences.")
+            return {'CANCELLED'}
 
         if not addon_prefs.api_key:
-            self.report({'ERROR'}, "Please enable the ChatGPT-3 Integration addon in the preferences and enter your API key.")
+            self.report({'ERROR'}, "Please enter your ChatGPT API key in the addon preferences.")
             return {'CANCELLED'}
 
         openai.api_key = addon_prefs.api_key
