@@ -111,7 +111,11 @@ class GPT_OT_generate_response(bpy.types.Operator):
         openai.api_key = api_key
 
         prompt = context.scene.chat_gpt_prompt
-        response = generate_chat_gpt_response(prompt)
+        try:
+            response = generate_chat_gpt_response(prompt)
+        except openai.error.RateLimitError:
+            self.report({'ERROR'}, "You exceeded your current quota. Please check your plan and billing details.")
+            return {'CANCELLED'}
 
         # Create a new Text datablock if not already present
         response_text = bpy.data.texts.get("ChatGPT_Response")
@@ -128,6 +132,7 @@ class GPT_OT_generate_response(bpy.types.Operator):
                 break
 
         return {'FINISHED'}
+
 
 
     @staticmethod
