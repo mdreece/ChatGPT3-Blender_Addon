@@ -1,7 +1,7 @@
 bl_info = {
     "name": "ChatGPT-3 Integration",
     "author": "Dave Nectariad Rome",
-    "version": (0, 9, 1),
+    "version": (0, 9, 2),
     "blender": (3, 40, 1),
     "location": "Text Editor > Sidebar > ChatGPT-3",
     "description": "Integrates ChatGPT-3 into Blender using the OpenAI API",
@@ -74,6 +74,18 @@ class ChatGPTAddonPreferences(bpy.types.AddonPreferences):
         layout.prop(self, "api_key")
         layout.prop(self, "model")
 
+        # Button to open GitHub repository
+        row = layout.row()
+        row.alignment = 'LEFT'
+        row.operator("wm.url_open", text="GitHub Repository").url = "https://github.com/mdreece/ChatGPT3-Blender_Addon"
+
+        # Button to open README.md file
+        row = layout.row()
+        row.alignment = 'LEFT'
+        row.operator("wm.url_open", text="Documentation").url = "https://github.com/mdreece/ChatGPT3-Blender_Addon/blob/main/README.md"
+
+
+
 
 class GPT_OT_install_openai(bpy.types.Operator):
     bl_idname = "gpt.install_openai"
@@ -116,8 +128,13 @@ class GPT_OT_generate_response(bpy.types.Operator):
 
     def execute(self, context):
         addon_prefs = context.preferences.addons[__name__].preferences
-        openai.api_key = addon_prefs.api_key
 
+        if not addon_prefs.api_key:
+            bpy.ops.preferences.addon_expand(module=__name__)
+            self.report({'ERROR'}, "Please enter your ChatGPT API key in the addon preferences.")
+            return {'CANCELLED'}
+
+        openai.api_key = addon_prefs.api_key
         prompt = context.scene.chat_gpt_prompt
 
         try:
