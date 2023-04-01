@@ -1,4 +1,4 @@
-# ChatGPT-3 Integration Addon for Blender
+ChatGPT-3 Integration Addon for Blender
 The ChatGPT-3 Integration Addon allows Blender users to generate text responses to a prompt using OpenAI's GPT-3 API. The generated response can be displayed in the Text Editor or saved as a new script, or executed directly in Blender (results may vary)
 Installation
 To install the addon, follow these steps:
@@ -25,4 +25,3 @@ Notes
     • The addon has been tested with Blender version 3.40.1.
     • The addon may be compatible with other versions of Blender, but this has not been tested.
     • The addon requires an active internet connection to use the GPT-3 API.
-    
