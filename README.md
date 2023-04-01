@@ -2,10 +2,11 @@
 The ChatGPT-3 Integration Addon allows Blender users to generate text responses to a prompt using OpenAI's GPT-3 API. The generated response can be displayed in the Text Editor or saved as a new script, or executed directly in Blender (results may vary)
 Installation
 To install the addon, follow these steps:
-    1. Download or create a BATCH file using this linked script. https://raw.githubusercontent.com/mdreece/ChatPGT3-Blender_Addon/main/chat_gpt3_addon_INSTALL.bat
-    2. Save the BATCH (.bat) anywhere and run as ADMIN
-    3. The .BAT will install OPENAI Python Libraries, CURL and add the add-on to your BLENDER system. 
-    4. BLENDER will open and the add-on should be enabled. (If not search for ‘Chat’)
+
+1. Download or create a BATCH file using this linked script. https://raw.githubusercontent.com/mdreece/ChatPGT3-Blender_Addon/main/chat_gpt3_addon_INSTALL.bat
+2. Save the BATCH (.bat) anywhere and run as ADMIN
+3. The .BAT will install OPENAI Python Libraries, CURL and add the add-on to your BLENDER system. 
+4. BLENDER will open and the add-on should be enabled. (If not search for ‘Chat’)
 Setting up the API key
 Before using the addon, you need to set up your API key for OpenAI's GPT-3 API. To do this, follow these steps:
     1. Open Blender and go to the "Preferences" window.
