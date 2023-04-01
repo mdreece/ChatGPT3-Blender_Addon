@@ -34,4 +34,4 @@ Notes
 • !!! GENERATED RESPONSE/RUN GENERATED RESPONSE ARE STILL WIP AND WILL NOT WORK CORRECTLY !!!
 • The addon has been tested with Blender version 3.40.1.
 • The addon may be compatible with other versions of Blender, but this has not been tested.
-• The addon requires an active internet connection to use the GPT-3 API.
+• The addon requires an active internet connection to use the GPT-3 API. 
