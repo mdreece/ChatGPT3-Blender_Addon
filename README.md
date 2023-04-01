@@ -1,6 +1,6 @@
 # ChatPGT3-Blender_Addon (Hella ALPHA)
 CURRENT VERSION: 0.9
-"Dave Nectariad Rome" is just my full name all mixed up.
+"Dave Nectariad Rome" is just my full name all mixed up. (Entire Script is made for fun)
 
 !!! YOU WILL NEED YOUR OWN OPENAI API KEY !!!
 https://platform.openai.com/account/api-keys
