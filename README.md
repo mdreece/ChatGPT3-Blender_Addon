@@ -10,6 +10,8 @@ https://platform.openai.com/account/api-keys
 
 !!! TESTED ON MIRCOSOFT WINDOWS OS ONLY !!!
 
+!!! OPEN AI PYTHON LIBRARY REQUIRED !!!
+
 
 The ChatGPT-3 Integration Addon allows Blender users to generate text responses to a prompt using OpenAI's GPT-3 API. The generated response can be displayed in the Text Editor. (results may vary)
 Installation
